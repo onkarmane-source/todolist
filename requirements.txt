@@ -1,0 +1,7 @@
+djangorestframework
+requests
+django-taggit
+django-taggit-serializer
+djangorestframework-jwt
+django
+pyyaml
