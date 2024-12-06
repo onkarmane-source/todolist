@@ -6,9 +6,9 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework import status
+
+
 # list all tasks
-
-
 class ListToDo(generics.ListAPIView):
     queryset = ToDoList.objects.all()
     authentication_classes = [SessionAuthentication, BasicAuthentication]
