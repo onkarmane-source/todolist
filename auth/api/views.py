@@ -32,9 +32,7 @@ class AuthView(APIView):
         return Response({"data": "Invalid Credentials"}, status=401).add_post_render_callback
 
 
-Register ENDPOINT Handler
-
-
+# Register ENDPOINT Handler
 class RegisterAPIView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
