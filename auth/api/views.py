@@ -1,11 +1,9 @@
 from django.contrib.auth import logout, login
 from django.contrib.auth import authenticate, get_user_model
-
 # rest_framework
 from rest_framework import permissions, generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
 # relative imports
 from .serializers import UserSerializer
 from .permissions import AnonPermissionOnly
@@ -38,8 +36,12 @@ class RegisterAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AnonPermissionOnly]
 
-    def get_serializer_context(self, *args, **kwargs):
-        return {"request": self.request}
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Logout ENDPOINT Handler
 

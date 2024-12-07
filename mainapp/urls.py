@@ -8,5 +8,6 @@ urlpatterns = [
     # path('register/', RegisterAPIView.as_view()),
     # path('logout/', LogoutAPIView.as_view()),
     path("api/main/", include("mainapp.api.urls")),
-    path("", home_view)
+    path("", home_view),
+    path('api/auth/', include('auth.api.urls'))
 ]
