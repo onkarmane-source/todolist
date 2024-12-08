@@ -7,7 +7,6 @@ from rest_framework.response import Response
 # relative imports
 from .serializers import UserSerializer
 from .permissions import AnonPermissionOnly
-
 User = get_user_model()
 
 
