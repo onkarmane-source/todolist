@@ -1,3 +1,4 @@
+[![Django Test](https://github.com/onkarmane-source/todolist/actions/workflows/run-tests.yml/badge.svg)](https://github.com/onkarmane-source/todolist/actions/workflows/run-tests.yml)
 # Project Setup
 
 To initiate the project, you must first start the server using the designated virtual environment.
